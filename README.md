@@ -1,49 +1,70 @@
-E-commerce store built with Next.js and Stripe checkout by [AlterClass.io](https://alterclass.io).
+# Getting Started with Create React App
 
-- Learn to build this application step-by-step by following the tutorial on [AlterClass](https://alterclass.io/tutorials/create-an-ecommerce-website-with-nextjs-and-stripe).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- Preview the app live [here](https://myplantshop.vercel.app/).
+## Available Scripts
 
-- Deploy the same app using Vercel:
+In the project directory, you can run:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/AlterClassIO/ecommerce-nextjs-stripe-checkout&project-name=eCommerce+Store+by+AlterClass&repository-name=eCommerce+Store+by+AlterClass)
+### `npm start`
 
-## Getting Started
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### 1. Clone the repository and install dependencies
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-```
-git clone https://github.com/AlterClassIO/ecommerce-nextjs-stripe-checkout
-cd ecommerce-nextjs-stripe-checkout
-npm install
-```
+### `npm test`
 
-### 2. Configure your local environment
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Rename the `.env.local.example` file in this directory to `.env.local` (which will
-be ignored by Git):
+### `npm run build`
 
-```
-cp .env.local.example .env.local
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Add your own values for all the environment variables.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### 3. Start the application
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-To run your site locally, use:
+### `npm run eject`
 
-```
-npm run dev
-```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-To run it in production mode, use:
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```
-npm run build
-npm run start
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## License
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-[MIT](https://github.com/AlterClassIO/ecommerce-nextjs-stripe-checkout/blob/master/LICENSE)
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
