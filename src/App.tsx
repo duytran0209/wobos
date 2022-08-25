@@ -1,10 +1,10 @@
 import React, { memo, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { darkTheme, lightTheme } from "./utils/constants.jsx";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
-import Home from "./pages/Home.jsx";
 import { useAppSelector } from "../src/app/hook";
+import Home from "./pages/Home";
 const App = memo(() => {
   const { theme } = useAppSelector((state) => state.ui);
   const currentTheme = theme === "light" ? lightTheme : darkTheme;
