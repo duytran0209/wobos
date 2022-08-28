@@ -1,13 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import uiSlice from "../slices/uiSlice";
 import userSlice from "../slices/userSlice";
+import jobSlice from "../slices/jobSlice";
 export const store = configureStore({
   reducer: {
     ui: uiSlice.reducer,
     user: userSlice.reducer,
-    /*
-    icecream: icecreamReducer,
-    */
+    job: jobSlice.reducer,
   },
 });
 

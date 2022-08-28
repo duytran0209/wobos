@@ -4,18 +4,20 @@ export interface FormRawProps {
   children?: string;
   type: "text" | "password" | "email";
   name: string;
-  value: string;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  labelText?: string;
+  value: any;
 }
 
 export const FormRaw: React.FC<FormRawProps> = memo(
-  ({ type, name, value, handleChange }) => {
+  ({ type, name, value, handleChange, labelText }) => {
     return (
       <div className="form-row">
         <label htmlFor={name} className="form-label">
-          {name}
+          {labelText || name}
         </label>
         <input
+          id={name}
           type={type}
           name={name}
           value={value}

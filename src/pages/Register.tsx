@@ -1,4 +1,5 @@
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { useAppDispatch, useAppSelector } from "../app/hook";
 import { FormRaw } from "../components/form";
@@ -31,6 +32,7 @@ export const Register: React.FC<RegisterProps> = memo(({ children }) => {
     setValues({ ...values, isMember: !values.isMember });
   };
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const { user, isLoading } = useAppSelector((store) => store.user);
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -50,6 +52,15 @@ export const Register: React.FC<RegisterProps> = memo(({ children }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
+
+  useEffect(() => {
+    if (user) {
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    }
+  }, [user]);
+
   return (
     <Wrapper className="full-page">
       <form className="form" onSubmit={onSubmit}>
@@ -78,7 +89,7 @@ export const Register: React.FC<RegisterProps> = memo(({ children }) => {
           handleChange={handleChange}
         />
         <button type="submit" className="btn btn-block">
-          Submit form
+          {isLoading ? "loading..." : "submit"}
         </button>
         <p>
           {values.isMember ? "Not a member yet?" : "Already a member?"}

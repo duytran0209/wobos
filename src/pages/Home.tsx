@@ -23,7 +23,7 @@ const Home = () => {
             consectetur adipisicing elit. Vitae eveniet exercitationem
             inventore, volup
           </p>
-          <Link to="register" className="btn btn-hero">
+          <Link to="/register" className="btn btn-hero">
             Login/Register
           </Link>
         </div>
