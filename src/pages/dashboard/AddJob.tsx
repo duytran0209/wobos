@@ -2,7 +2,12 @@ import React, { memo, useEffect } from "react";
 import { toast } from "react-toastify";
 import { useAppDispatch, useAppSelector } from "../../app/hook";
 import { FormRaw, FormRawSelect } from "../../components/form";
-import { clearValues, createJob, handleChange } from "../../slices/jobSlice";
+import {
+  clearValues,
+  createJob,
+  handleChange,
+  editJob,
+} from "../../slices/jobSlice";
 import Wrapper from "../../wrappers/DashboardFormPage";
 export interface AddJobProps {
   children?: string;
@@ -32,6 +37,22 @@ export const AddJob: React.FC<AddJobProps> = memo(({ children }) => {
       toast.error("Please fill all fields");
       return;
     }
+    if (isEditting) {
+      dispatch(
+        editJob({
+          jobId: editJobId,
+          job: {
+            position,
+            company,
+            jobLocation,
+            jobType,
+            status,
+          },
+        })
+      );
+      return;
+    }
+
     dispatch(createJob({ position, company, jobLocation, jobType, status }));
   };
   const handleJobInputChange = (
@@ -45,7 +66,9 @@ export const AddJob: React.FC<AddJobProps> = memo(({ children }) => {
   };
 
   useEffect((): void => {
-    dispatch(handleChange({ name: "joblocation", value: user.location }));
+    if (isEditting) {
+      dispatch(handleChange({ name: "jobLocation", value: user.location }));
+    }
   }, []);
 
   return (

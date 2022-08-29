@@ -1,13 +1,15 @@
-import React, { memo, useState } from "react";
-import styled from "styled-components";
-
-export interface StatsStates {}
+import React, { memo, useEffect } from "react";
+import { useAppDispatch } from "../../app/hook";
+import { showStats } from "../../slices/allJobsSlice";
 
 export interface StatsProps {
   children?: string;
 }
 
-const StatsStyled = styled.div``;
 export const Stats: React.FC<StatsProps> = memo(({ children }) => {
-  return <StatsStyled></StatsStyled>;
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(showStats());
+  }, []);
+  return <>Stats</>;
 });

@@ -37,7 +37,6 @@ export const Profile: React.FC<ProfileProps> = memo(({ children }) => {
       toast.error("Please fill all fields");
       return;
     }
-    // @ts-ignore
     dispatch(updateUser(userData));
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

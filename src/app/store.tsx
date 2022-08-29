@@ -1,16 +1,23 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { AnyAction, configureStore } from "@reduxjs/toolkit";
+import thunkMiddleware, { ThunkAction } from "redux-thunk";
+import allJobsSlice from "../slices/allJobsSlice";
+import jobSlice from "../slices/jobSlice";
 import uiSlice from "../slices/uiSlice";
 import userSlice from "../slices/userSlice";
-import jobSlice from "../slices/jobSlice";
 export const store = configureStore({
   reducer: {
     ui: uiSlice.reducer,
     user: userSlice.reducer,
     job: jobSlice.reducer,
+    allJobs: allJobsSlice.reducer,
   },
+  middleware: [thunkMiddleware],
 });
-
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  AnyAction
+>;

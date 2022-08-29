@@ -65,60 +65,45 @@ const userSlice = createSlice({
     },
   },
   extraReducers: {
-    // @ts-ignore
-
-    [registerUser.pending]: (state) => {
+    [registerUser.pending.type]: (state) => {
       state.isLoading = true;
     },
-    // @ts-ignore
-
-    [registerUser.fulfilled]: (state, { payload }) => {
+    [registerUser.fulfilled.type]: (state, { payload }) => {
       const { user } = payload;
       state.isLoading = false;
       state.user = user;
       addUserToLocalStorage(user);
       toast.success("Register Successfully");
     },
-    // @ts-ignore
-
-    [registerUser.rejected]: (state, { payload }) => {
+    [registerUser.rejected.type]: (state, { payload }) => {
       state.isLoading = false;
       toast.error(payload);
     },
-    // @ts-ignore
-    [loginUser.pending]: (state) => {
+    [loginUser.pending.type]: (state) => {
       state.isLoading = true;
     },
-    // @ts-ignore
-    [loginUser.fulfilled]: (state, { payload }) => {
+    [loginUser.fulfilled.type]: (state, { payload }) => {
       const { user } = payload;
       state.isLoading = false;
       state.user = user;
       addUserToLocalStorage(user);
       toast.success("login Successfully");
     },
-    // @ts-ignore
-
-    [loginUser.rejected]: (state, { payload }) => {
+    [loginUser.rejected.type]: (state, { payload }) => {
       state.isLoading = false;
       toast.error(payload);
     },
-
-    // @ts-ignore
-    [updateUser.pending]: (state) => {
+    [updateUser.pending.type]: (state) => {
       state.isLoading = true;
     },
-    // @ts-ignore
-    [updateUser.fulfilled]: (state, { payload }) => {
+    [updateUser.fulfilled.type]: (state, { payload }) => {
       const { user } = payload;
       state.isLoading = false;
       state.user = user;
       addUserToLocalStorage(user);
       toast.success("User updated!");
     },
-    // @ts-ignore
-
-    [updateUser.rejected]: (state, { payload }) => {
+    [updateUser.rejected.type]: (state, { payload }) => {
       state.isLoading = false;
       toast.error(payload);
     },

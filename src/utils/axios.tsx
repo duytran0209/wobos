@@ -1,6 +1,14 @@
 import axios from "axios";
-const customFetch = axios.create({
+import { getUserFromLocalStorage } from "./localStorage";
+
+export const customFetch = axios.create({
   baseURL: "https://jobify-prod.herokuapp.com/api/v1/toolkit",
 });
 
-export default customFetch;
+customFetch.interceptors.request.use((config: any) => {
+  const user = getUserFromLocalStorage();
+  if (user) {
+    config.headers.common["Authorization"] = `Bearer ${user.token}`;
+  }
+  return config;
+});
