@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { JobsContainer, SearchContainer } from "../../components/container";
+import { JobsContainer } from "../../components/container";
 
 export interface AllJobProps {
   children?: string;
@@ -8,8 +8,7 @@ export interface AllJobProps {
 export const AllJob: React.FC<AllJobProps> = memo(({ children }) => {
   return (
     <>
-      <JobsContainer></JobsContainer>
-      <SearchContainer></SearchContainer>
+      <JobsContainer />
     </>
   );
 });

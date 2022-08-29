@@ -5,7 +5,7 @@ import { customFetch } from "../utils/axios";
 
 export const createJobThunk = async (job: any, thunkAPI: any) => {
   try {
-    const response = await customFetch.post("job/createJob", job);
+    const response = await customFetch.post("/jobs", job);
     thunkAPI.dispatch(clearValues());
     return response.data.msg;
   } catch (error: any) {
@@ -19,7 +19,7 @@ export const createJobThunk = async (job: any, thunkAPI: any) => {
 export const deleteJobThunk = async (jobId: string, thunkAPI: any) => {
   thunkAPI.dispatch(showLoading());
   try {
-    const response = await customFetch.delete(`job/deleteJob/${jobId}`);
+    const response = await customFetch.delete(`/jobs/${jobId}`);
     thunkAPI.dispatch(getAllJobs());
     return response.data.msg;
   } catch (error: any) {

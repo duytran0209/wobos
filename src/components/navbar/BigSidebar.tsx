@@ -28,5 +28,3 @@ export const BigSideBar: React.FC<BigSideBarProps> = memo(({ children }) => {
     </Wrapper>
   );
 });
-
-// thunkAPI typescript - maps API links

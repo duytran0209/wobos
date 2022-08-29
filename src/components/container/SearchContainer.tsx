@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchContainer = () => {
+const SearchContainer: React.FC = () => {
   return <div></div>;
 };
 

@@ -1,5 +1,5 @@
 import { AnyAction, configureStore } from "@reduxjs/toolkit";
-import thunkMiddleware, { ThunkAction } from "redux-thunk";
+import { ThunkAction } from "redux-thunk";
 import allJobsSlice from "../slices/allJobsSlice";
 import jobSlice from "../slices/jobSlice";
 import uiSlice from "../slices/uiSlice";
@@ -11,7 +11,6 @@ export const store = configureStore({
     job: jobSlice.reducer,
     allJobs: allJobsSlice.reducer,
   },
-  middleware: [thunkMiddleware],
 });
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

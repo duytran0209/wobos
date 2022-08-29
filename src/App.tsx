@@ -6,13 +6,7 @@ import { Error, Home, Register } from "./pages";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { darkTheme, lightTheme } from "./utils/constants";
 import ProtectedRoute from "./pages/ProtectedRoute";
-import {
-  Profile,
-  AddJob,
-  AllJob,
-  Stats,
-  SharedLayout,
-} from "./pages/dashboard";
+import { Profile, AddJob, AllJob, SharedLayout } from "./pages/dashboard";
 
 const App = memo(() => {
   const { theme } = useAppSelector((state) => state.ui);
@@ -31,7 +25,6 @@ const App = memo(() => {
                 </ProtectedRoute>
               }
             >
-              <Route index element={<Stats />} />
               <Route path="all-jobs" element={<AllJob />} />
               <Route path="add-job" element={<AddJob />} />
               <Route path="profile" element={<Profile />} />

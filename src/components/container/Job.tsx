@@ -30,7 +30,7 @@ const Job: React.FC<Props> = ({
   return (
     <Wrapper>
       <header>
-        <div className="main-icon">{company.charAt(0)}</div>
+        <div className="main-icon">{company?.charAt(0)}</div>
         <div className="info">
           <h5>{position}</h5>
           <p>{company}</p>
@@ -67,7 +67,6 @@ const Job: React.FC<Props> = ({
             <button
               type="button"
               className="btn delete-btn"
-              // @ts-ignore
               onClick={() => dispatch(deleteJob(_id))}
             >
               Delete

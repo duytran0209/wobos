@@ -4,11 +4,10 @@ import Wrapper from "../../wrappers/JobsContainer";
 import { useAppDispatch, useAppSelector } from "../../app/hook";
 import LoadingSpinner from "../loading";
 import { getAllJobs } from "../../slices/allJobsSlice";
-const JobsContainer = () => {
+const JobsContainer: React.FC = () => {
   const { jobs, isLoading } = useAppSelector((store) => store.allJobs);
   const dispatch = useAppDispatch();
   useEffect(() => {
-    // @ts-ignore
     dispatch(getAllJobs());
   }, []);
   if (isLoading) {
