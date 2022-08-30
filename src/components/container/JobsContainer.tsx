@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import Job from "./Job";
-import Wrapper from "../../wrappers/JobsContainer";
 import { useAppDispatch, useAppSelector } from "../../app/hook";
-import LoadingSpinner from "../loading";
-import PageBtnContainer from "./PageBtnContainer";
 import { getAllJobs } from "../../slices/allJobsSlice";
+import Wrapper from "../../wrappers/JobsContainer";
+import LoadingSpinner from "../loading";
+import Job from "./Job";
+import PageBtnContainer from "./PageBtnContainer";
 
 const JobsContainer: React.FC = () => {
   const {

@@ -4,7 +4,7 @@ import DarkMode from "../components/darkmode/DarkMode";
 import Wrapper from "../wrappers/LandingPage";
 const logo: string = require("../images/logo.svg").default;
 const main: string = require("../images/main.svg").default;
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <Wrapper>
       <nav>

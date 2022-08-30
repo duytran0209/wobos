@@ -1,5 +1,4 @@
-import { customFetch, checkForUnauthorizedResponse } from "../utils/axios";
-import { toast } from "react-toastify";
+import { checkForUnauthorizedResponse, customFetch } from "../utils/axios";
 
 export const getAllJobsThunk = async (_: any, thunkAPI: any) => {
   const { page, search, searchStatus, searchType, sort } =
