@@ -1,14 +1,10 @@
-import {
-  AsyncThunk,
-  createAsyncThunk,
-  createSlice,
-  PayloadAction,
-} from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 import {
   loginUserThunk,
   registerUserThunk,
   updateUserThunk,
+  clearStoreThunk,
 } from "../thunk/userThunk";
 import {
   addUserToLocalStorage,
@@ -46,6 +42,11 @@ export const updateUser: any = createAsyncThunk(
   async (user, thunkAPI) => {
     return updateUserThunk("/auth/updateUser", user, thunkAPI);
   }
+);
+
+export const clearStore: any = createAsyncThunk(
+  "user/clearStore",
+  clearStoreThunk
 );
 
 const userSlice = createSlice({
@@ -106,6 +107,9 @@ const userSlice = createSlice({
     [updateUser.rejected.type]: (state, { payload }) => {
       state.isLoading = false;
       toast.error(payload);
+    },
+    [clearStore.rejected.type]: (state) => {
+      toast.error("Error clearing store");
     },
   },
 });

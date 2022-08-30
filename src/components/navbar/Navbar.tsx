@@ -2,7 +2,7 @@ import React, { memo, useState } from "react";
 import Wrapper from "../../wrappers/Navbar";
 import { FaAlignLeft, FaUserCircle, FaCaretDown } from "react-icons/fa";
 import { useAppSelector, useAppDispatch } from "../../app/hook";
-import { toggleSidebar, logoutUser } from "../../slices/userSlice";
+import { toggleSidebar, clearStore } from "../../slices/userSlice";
 interface NavbarProps {
   children?: React.ReactNode;
 }
@@ -47,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = memo(({ children }) => {
             <button
               type="button"
               className="dropdown-btn"
-              onClick={() => dispatch(logoutUser("Logging out..."))}
+              onClick={() => dispatch(clearStore("Logging out..."))}
             >
               Log out
             </button>

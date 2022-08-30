@@ -65,16 +65,21 @@ export const AddJob: React.FC<AddJobProps> = memo(({ children }) => {
     dispatch(handleChange({ name, value }));
   };
 
-  useEffect((): void => {
-    if (isEditting) {
-      dispatch(handleChange({ name: "jobLocation", value: user.location }));
+  useEffect(() => {
+    if (!isEditting) {
+      dispatch(
+        handleChange({
+          name: "jobLocation",
+          value: user.location,
+        })
+      );
     }
   }, []);
 
   return (
     <Wrapper>
       <form className="form">
-        <h3>{isEditting ? "Edit Job" : "Add Job"}</h3>
+        <h3>{isEditting ? "edit job" : "add job"}</h3>
         <div className="form-center">
           {/* position */}
           <FormRaw

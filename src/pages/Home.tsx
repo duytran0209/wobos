@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <Wrapper>
       <nav>
-        <img src={logo} alt="jobster logo" className="logo" />
+        <img src={logo} alt="wobos" className="logo" />
       </nav>
       <div className="container page">
         <div className="info">

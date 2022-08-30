@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-  labelText: string;
+  labelText?: string;
   name: string;
   value: any;
   handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;

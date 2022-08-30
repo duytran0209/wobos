@@ -47,7 +47,7 @@ const Job: React.FC<Props> = ({
         <footer>
           <div className="actions">
             <Link
-              to="add-job"
+              to="/add-job"
               className="btn edit-btn"
               onClick={() =>
                 dispatch(
