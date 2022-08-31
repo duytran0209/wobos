@@ -29,6 +29,8 @@ export const registerUser: any = createAsyncThunk(
     return registerUserThunk("/auth/register", user, thunkAPI);
   }
 );
+// Tên action: user/loginUser
+// Code async logic, tham số đầu tiên data là dữ liệu truyền vào khi gọi action
 
 export const loginUser: any = createAsyncThunk(
   "user/loginUser",
