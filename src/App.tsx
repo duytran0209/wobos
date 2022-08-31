@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { useAppSelector } from "../src/app/hook";
 import { Error, Home, Register } from "./pages";
+import { AddJob, AllJob, Profile, SharedLayout } from "./pages/dashboard";
+import ProtectedRoute from "./pages/ProtectedRoute";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { darkTheme, lightTheme } from "./utils/constants";
-import ProtectedRoute from "./pages/ProtectedRoute";
-import { Profile, AddJob, AllJob, SharedLayout } from "./pages/dashboard";
 
 const App = memo(() => {
   const { theme } = useAppSelector((state) => state.ui);
