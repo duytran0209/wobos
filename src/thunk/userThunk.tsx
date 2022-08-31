@@ -8,6 +8,7 @@ export const registerUserThunk = async (
   thunkAPI: any
 ) => {
   try {
+    // post: create/update a resource.
     const response = await customFetch.post(url, user);
     return response.data;
   } catch (error: any) {

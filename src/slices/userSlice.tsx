@@ -30,8 +30,7 @@ export const registerUser: any = createAsyncThunk(
   }
 );
 // Tên action: user/loginUser
-// Code async logic, tham số đầu tiên data là dữ liệu truyền vào khi gọi action
-
+// createAsyncThunk: create async action: action name, async action
 export const loginUser: any = createAsyncThunk(
   "user/loginUser",
   async (user, thunkAPI) => {
@@ -67,6 +66,8 @@ const userSlice = createSlice({
       }
     },
   },
+  // Code logic xử lý async action
+
   extraReducers: {
     [registerUser.pending.type]: (state) => {
       state.isLoading = true;
@@ -96,6 +97,7 @@ const userSlice = createSlice({
       state.isLoading = false;
       toast.error(payload);
     },
+
     [updateUser.pending.type]: (state) => {
       state.isLoading = true;
     },
