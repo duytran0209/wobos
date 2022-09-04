@@ -6,7 +6,6 @@ import { clearStore } from "../slices/userSlice";
 export const customFetch = axios.create({
   baseURL: "https://jobify-prod.herokuapp.com/api/v1/toolkit",
 });
-
 // Axios interceptors làm mới token khi hết hạn trong jwt
 customFetch.interceptors.request.use((config: any) => {
   const user = getUserFromLocalStorage();
@@ -21,7 +20,7 @@ customFetch.interceptors.request.use((config: any) => {
 export const checkForUnauthorizedResponse = (error: any, thunkAPI: any) => {
   if (error.response.status === 401) {
     thunkAPI.dispatch(clearStore());
-    return thunkAPI.rejectWithValue("Unauthorized");
+    return thunkAPI.rejectWithValue("Unauthorized! Logging Out...");
   }
   return thunkAPI.rejectWithValue(error.response.data.msg);
 };

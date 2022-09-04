@@ -34,25 +34,18 @@ export const AddJob: React.FC<AddJobProps> = memo(({ children }) => {
   ): void => {
     e.preventDefault();
     if (!position || !company || !jobLocation) {
-      toast.error("Please fill all fields");
+      toast.error("Please fill out all fields");
       return;
     }
     if (isEditting) {
       dispatch(
         editJob({
           jobId: editJobId,
-          job: {
-            position,
-            company,
-            jobLocation,
-            jobType,
-            status,
-          },
+          job: { position, company, jobLocation, jobType, status },
         })
       );
       return;
     }
-
     dispatch(createJob({ position, company, jobLocation, jobType, status }));
   };
   const handleJobInputChange = (
@@ -79,7 +72,7 @@ export const AddJob: React.FC<AddJobProps> = memo(({ children }) => {
   return (
     <Wrapper>
       <form className="form">
-        <h3>{isEditting ? "edit job" : "add job"}</h3>
+        <h3>{isEditting ? "Edit job" : "Add job"}</h3>
         <div className="form-center">
           {/* position */}
           <FormRaw

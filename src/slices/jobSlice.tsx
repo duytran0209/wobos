@@ -41,21 +41,17 @@ const jobSlice = createSlice({
   name: "job",
   initialState,
   reducers: {
-    handleChange: (
-      state: any,
-      action: PayloadAction<{ name: string; value: any }>
-    ) => {
-      const { name, value } = action.payload;
+    handleChange: (state, { payload: { name, value } }) => {
       state[name] = value;
     },
-    clearValues: (state: any) => {
+    clearValues: () => {
       return {
         ...initialState,
         jobLocation: getUserFromLocalStorage()?.location || "",
       };
     },
-    setEditJob: (state: any, action: PayloadAction<any>) => {
-      return { ...state, isEditting: true, editJobId: action.payload };
+    setEditJob: (state, { payload }) => {
+      return { ...state, isEditing: true, ...payload };
     },
   },
   extraReducers: {
